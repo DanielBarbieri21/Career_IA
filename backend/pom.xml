@@ -24,7 +24,7 @@
     <jjwt.version>0.12.6</jjwt.version>
     <mapstruct.version>1.5.5.Final</mapstruct.version>
     <openfeature.version>1.7.0</openfeature.version>
-    <bucket4j.version>8.10.1</bucket4j.version>
+    <bucket4j.version>0.12.7</bucket4j.version>
     <testcontainers.version>1.19.8</testcontainers.version>
     <wiremock.version>3.6.0</wiremock.version>
     <pdfbox.version>3.0.2</pdfbox.version>
