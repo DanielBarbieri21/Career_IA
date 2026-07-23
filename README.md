@@ -80,6 +80,7 @@ career-ai/
 ## 🛠️ Stack Tecnológica
 
 ### Backend
+
 - **Java 21** com Virtual Threads (Project Loom)
 - **Spring Boot 3.3** (Security, Data JPA, Spring AI, Web)
 - **PostgreSQL 16** com extensão **pgvector** (Embeddings & RAG)
@@ -89,6 +90,7 @@ career-ai/
 - **Spring AI** (Integração OpenAI GPT-4o & Google Gemini)
 
 ### Frontend
+
 - **React 18** + **TypeScript** + **Vite**
 - **TailwindCSS** + **Shadcn UI**
 - **Framer Motion** (Animações e transições)
@@ -133,7 +135,8 @@ cd frontend
 npm install
 npm run dev
 ```
-Acesse **http://localhost:5173** no navegador.
+
+Acesse **<http://localhost:5173>** no navegador.
 
 ### Modo Completo (Containers + Infraestrutura)
 
@@ -149,12 +152,7 @@ cd backend
 ./mvnw spring-boot:run
 ```
 
+🌐 GitHub: <https://github.com/DanielBarbieri21>  
+💼 LinkedIn: <https://www.linkedin.com/in/daniel-barbieri-4990462a/>
+
 ---
-
-## 📄 Licença
-
-Este projeto está sob a licença **MIT**. Veja o arquivo `LICENSE` para mais detalhes.
-
-<div align="center">
-  <sub>Construído com ❤️ por Career AI Team</sub>
-</div>
