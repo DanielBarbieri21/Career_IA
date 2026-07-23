@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import com.careerai.presentation.exception.GlobalExceptionHandler.ApiResponse; // Adjust import as necessary
+import com.careerai.domain.shared.exception.GlobalExceptionHandler.ApiResponse;
 
 @Slf4j
 @RestController
