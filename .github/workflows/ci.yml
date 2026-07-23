@@ -71,12 +71,12 @@ jobs:
           path: backend/target/site/jacoco/
 
       - name: SonarQube Scan
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.SONAR_URL != ''
         working-directory: backend
         run: mvn sonar:sonar -B
           -Dsonar.projectKey=career-ai-backend
           -Dsonar.host.url=${{ secrets.SONAR_URL }}
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.token=${{ secrets.SONAR_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
