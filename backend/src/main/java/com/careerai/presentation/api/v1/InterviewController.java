@@ -19,43 +19,43 @@ public class InterviewController {
 
     @PostMapping
     @Operation(summary = "Criar sessão de entrevista")
-    public ResponseEntity<ApiResponse<Object>> createInterview(@RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Interview created", null));
+    public ResponseEntity<ApiResponse<Void>> createInterview(@RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Interview created"));
     }
 
     @GetMapping
     @Operation(summary = "Listar sessões de entrevista")
-    public ResponseEntity<ApiResponse<Object>> getInterviews() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Interviews listed", null));
+    public ResponseEntity<ApiResponse<Void>> getInterviews() {
+        return ResponseEntity.ok(ApiResponse.success("Interviews listed"));
     }
 
     @GetMapping("/{id}")
     @Operation(summary = "Buscar sessão de entrevista")
-    public ResponseEntity<ApiResponse<Object>> getInterview(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Interview found", null));
+    public ResponseEntity<ApiResponse<Void>> getInterview(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Interview found"));
     }
 
     @PostMapping("/{id}/questions")
     @Operation(summary = "Gerar perguntas")
-    public ResponseEntity<ApiResponse<Object>> generateQuestions(@PathVariable String id, @RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Questions generated", null));
+    public ResponseEntity<ApiResponse<Void>> generateQuestions(@PathVariable String id, @RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Questions generated"));
     }
 
     @PostMapping("/{id}/questions/{qId}/answer")
     @Operation(summary = "Submeter resposta")
-    public ResponseEntity<ApiResponse<Object>> submitAnswer(@PathVariable String id, @PathVariable String qId, @RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Answer submitted", null));
+    public ResponseEntity<ApiResponse<Void>> submitAnswer(@PathVariable String id, @PathVariable String qId, @RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Answer submitted"));
     }
 
     @PostMapping("/{id}/complete")
     @Operation(summary = "Finalizar sessão")
-    public ResponseEntity<ApiResponse<Object>> completeInterview(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Interview completed", null));
+    public ResponseEntity<ApiResponse<Void>> completeInterview(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Interview completed"));
     }
 
     @GetMapping("/{id}/feedback")
     @Operation(summary = "Obter feedback completo")
-    public ResponseEntity<ApiResponse<Object>> getFeedback(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Feedback retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getFeedback(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Feedback retrieved"));
     }
 }

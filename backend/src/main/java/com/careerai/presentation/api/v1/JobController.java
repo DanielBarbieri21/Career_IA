@@ -19,47 +19,47 @@ public class JobController {
 
     @PostMapping("/import")
     @Operation(summary = "Importar vaga")
-    public ResponseEntity<ApiResponse<Object>> importJob(@RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Job imported successfully", null));
+    public ResponseEntity<ApiResponse<Void>> importJob(@RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Job imported successfully"));
     }
 
     @GetMapping
     @Operation(summary = "Listar vagas com paginação")
-    public ResponseEntity<ApiResponse<Object>> listJobs(
+    public ResponseEntity<ApiResponse<Void>> listJobs(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(required = false) String sort,
             @RequestParam(required = false) String filter) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Jobs listed", null));
+        return ResponseEntity.ok(ApiResponse.success("Jobs listed"));
     }
 
     @GetMapping("/{id}")
     @Operation(summary = "Buscar vaga")
-    public ResponseEntity<ApiResponse<Object>> getJob(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Job found", null));
+    public ResponseEntity<ApiResponse<Void>> getJob(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Job found"));
     }
 
     @PutMapping("/{id}")
     @Operation(summary = "Atualizar vaga")
-    public ResponseEntity<ApiResponse<Object>> updateJob(@PathVariable String id, @RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Job updated", null));
+    public ResponseEntity<ApiResponse<Void>> updateJob(@PathVariable String id, @RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Job updated"));
     }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Deletar vaga")
-    public ResponseEntity<ApiResponse<Object>> deleteJob(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Job deleted", null));
+    public ResponseEntity<ApiResponse<Void>> deleteJob(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Job deleted"));
     }
 
     @PostMapping("/{id}/analyze")
     @Operation(summary = "Analisar vaga com IA")
-    public ResponseEntity<ApiResponse<Object>> analyzeJob(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Job analyzed", null));
+    public ResponseEntity<ApiResponse<Void>> analyzeJob(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Job analyzed"));
     }
 
     @GetMapping("/search")
     @Operation(summary = "Busca full-text de vagas")
-    public ResponseEntity<ApiResponse<Object>> searchJobs(@RequestParam String query) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Jobs search results", null));
+    public ResponseEntity<ApiResponse<Void>> searchJobs(@RequestParam String query) {
+        return ResponseEntity.ok(ApiResponse.success("Jobs search results"));
     }
 }

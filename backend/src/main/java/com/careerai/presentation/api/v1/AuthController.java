@@ -55,7 +55,7 @@ public class AuthController {
         String userEmail = redisTemplate.opsForValue().get(tokenKey);
         if (userEmail == null) {
             return ResponseEntity.status(401)
-                    .body(ApiResponse.error("Refresh token inválido ou expirado"));
+                    .body(ApiResponse.<TokenResponse>error("Refresh token inválido ou expirado"));
         }
 
         // Gerar novo access token
@@ -97,7 +97,7 @@ public class AuthController {
 
         if (currentUser == null) {
             return ResponseEntity.status(401)
-                    .body(ApiResponse.error("Não autenticado"));
+                    .body(ApiResponse.<UserResponse>error("Não autenticado"));
         }
 
         var response = new UserResponse(

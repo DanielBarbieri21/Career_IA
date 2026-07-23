@@ -20,8 +20,8 @@ public class AiController {
 
     @PostMapping("/generate")
     @Operation(summary = "Geração de conteúdo")
-    public ResponseEntity<ApiResponse<Object>> generateContent(@RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Content generated", null));
+    public ResponseEntity<ApiResponse<Void>> generateContent(@RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Content generated"));
     }
 
     @GetMapping("/stream")
@@ -32,19 +32,19 @@ public class AiController {
 
     @GetMapping("/history")
     @Operation(summary = "Histórico de gerações")
-    public ResponseEntity<ApiResponse<Object>> getAiHistory() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "AI history listed", null));
+    public ResponseEntity<ApiResponse<Void>> getAiHistory() {
+        return ResponseEntity.ok(ApiResponse.success("AI history listed"));
     }
 
     @PostMapping("/rag/analyze")
     @Operation(summary = "Análise RAG de vaga vs currículo")
-    public ResponseEntity<ApiResponse<Object>> analyzeRag(@RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "RAG analysis complete", null));
+    public ResponseEntity<ApiResponse<Void>> analyzeRag(@RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("RAG analysis complete"));
     }
 
     @GetMapping("/providers")
     @Operation(summary = "Provedores disponíveis")
-    public ResponseEntity<ApiResponse<Object>> getProviders() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Providers listed", null));
+    public ResponseEntity<ApiResponse<Void>> getProviders() {
+        return ResponseEntity.ok(ApiResponse.success("Providers listed"));
     }
 }

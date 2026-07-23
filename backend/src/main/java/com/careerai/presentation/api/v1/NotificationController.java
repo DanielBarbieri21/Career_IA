@@ -19,34 +19,34 @@ public class NotificationController {
 
     @GetMapping
     @Operation(summary = "Listar notificações")
-    public ResponseEntity<ApiResponse<Object>> listNotifications(
+    public ResponseEntity<ApiResponse<Void>> listNotifications(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(defaultValue = "false") boolean unreadOnly) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Notifications listed", null));
+        return ResponseEntity.ok(ApiResponse.success("Notifications listed"));
     }
 
     @GetMapping("/count-unread")
     @Operation(summary = "Contar notificações não lidas")
-    public ResponseEntity<ApiResponse<Object>> countUnread() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Unread count retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> countUnread() {
+        return ResponseEntity.ok(ApiResponse.success("Unread count retrieved"));
     }
 
     @PatchMapping("/{id}/read")
     @Operation(summary = "Marcar como lida")
-    public ResponseEntity<ApiResponse<Object>> markAsRead(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Notification marked as read", null));
+    public ResponseEntity<ApiResponse<Void>> markAsRead(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Notification marked as read"));
     }
 
     @PostMapping("/read-all")
     @Operation(summary = "Marcar todas como lidas")
-    public ResponseEntity<ApiResponse<Object>> markAllAsRead() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "All notifications marked as read", null));
+    public ResponseEntity<ApiResponse<Void>> markAllAsRead() {
+        return ResponseEntity.ok(ApiResponse.success("All notifications marked as read"));
     }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Deletar notificação")
-    public ResponseEntity<ApiResponse<Object>> deleteNotification(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Notification deleted", null));
+    public ResponseEntity<ApiResponse<Void>> deleteNotification(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Notification deleted"));
     }
 }

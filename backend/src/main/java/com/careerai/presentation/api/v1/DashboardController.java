@@ -19,37 +19,37 @@ public class DashboardController {
 
     @GetMapping("/metrics")
     @Operation(summary = "Métricas principais")
-    public ResponseEntity<ApiResponse<Object>> getMetrics() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Metrics retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getMetrics() {
+        return ResponseEntity.ok(ApiResponse.success("Metrics retrieved"));
     }
 
     @GetMapping("/timeline")
     @Operation(summary = "Linha do tempo de atividades")
-    public ResponseEntity<ApiResponse<Object>> getTimeline() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Timeline retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getTimeline() {
+        return ResponseEntity.ok(ApiResponse.success("Timeline retrieved"));
     }
 
     @GetMapping("/tech-demand")
     @Operation(summary = "Tecnologias mais pedidas")
-    public ResponseEntity<ApiResponse<Object>> getTechDemand() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Tech demand retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getTechDemand() {
+        return ResponseEntity.ok(ApiResponse.success("Tech demand retrieved"));
     }
 
     @GetMapping("/pipeline")
     @Operation(summary = "Pipeline de candidaturas")
-    public ResponseEntity<ApiResponse<Object>> getPipeline() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Pipeline retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getPipeline() {
+        return ResponseEntity.ok(ApiResponse.success("Pipeline retrieved"));
     }
 
     @GetMapping("/activities")
     @Operation(summary = "Atividades recentes")
-    public ResponseEntity<ApiResponse<Object>> getActivities() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Activities retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getActivities() {
+        return ResponseEntity.ok(ApiResponse.success("Activities retrieved"));
     }
 
     @GetMapping("/favorite-companies")
     @Operation(summary = "Empresas favoritas com match")
-    public ResponseEntity<ApiResponse<Object>> getFavoriteCompanies() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Favorite companies retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getFavoriteCompanies() {
+        return ResponseEntity.ok(ApiResponse.success("Favorite companies retrieved"));
     }
 }

@@ -24,13 +24,13 @@ public class AiService {
     public String generateContent(GenerationRequest request) {
         log.info("Generating content for type: {}", request.type());
         String prompt = buildPrompt(request.type(), request.context());
-        return chatClient.prompt(prompt).call().content();
+        return chatClient.prompt().user(prompt).call().content();
     }
 
     public Flux<String> generateStream(GenerationRequest request) {
         log.info("Streaming content for type: {}", request.type());
         String prompt = buildPrompt(request.type(), request.context());
-        return chatClient.prompt(prompt).stream().content();
+        return chatClient.prompt().user(prompt).stream().content();
     }
 
     public AtsAnalysisResult analyzeResume(String resumeText, String jobDescription) {

@@ -20,43 +20,43 @@ public class UserController {
 
     @GetMapping("/me")
     @Operation(summary = "Perfil completo")
-    public ResponseEntity<ApiResponse<Object>> getMyProfile() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Profile retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getMyProfile() {
+        return ResponseEntity.ok(ApiResponse.success("Profile retrieved"));
     }
 
     @PutMapping("/me")
     @Operation(summary = "Atualizar perfil")
-    public ResponseEntity<ApiResponse<Object>> updateMyProfile(@RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Profile updated", null));
+    public ResponseEntity<ApiResponse<Void>> updateMyProfile(@RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Profile updated"));
     }
 
     @PostMapping("/me/avatar")
     @Operation(summary = "Upload foto do avatar")
-    public ResponseEntity<ApiResponse<Object>> uploadAvatar(@RequestParam("file") MultipartFile file) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Avatar uploaded", null));
+    public ResponseEntity<ApiResponse<Void>> uploadAvatar(@RequestParam("file") MultipartFile file) {
+        return ResponseEntity.ok(ApiResponse.success("Avatar uploaded"));
     }
 
     @GetMapping("/me/gamification")
     @Operation(summary = "XP, level, badges, streak")
-    public ResponseEntity<ApiResponse<Object>> getGamification() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Gamification data retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getGamification() {
+        return ResponseEntity.ok(ApiResponse.success("Gamification data retrieved"));
     }
 
     @GetMapping("/me/stats")
     @Operation(summary = "Estatísticas gerais")
-    public ResponseEntity<ApiResponse<Object>> getStats() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Stats retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getStats() {
+        return ResponseEntity.ok(ApiResponse.success("Stats retrieved"));
     }
 
     @DeleteMapping("/me")
     @Operation(summary = "Excluir conta (LGPD)")
-    public ResponseEntity<ApiResponse<Object>> deleteMyAccount() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Account deleted", null));
+    public ResponseEntity<ApiResponse<Void>> deleteMyAccount() {
+        return ResponseEntity.ok(ApiResponse.success("Account deleted"));
     }
 
     @GetMapping("/me/export")
     @Operation(summary = "Exportar dados (LGPD)")
-    public ResponseEntity<ApiResponse<Object>> exportMyData() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Data exported", null));
+    public ResponseEntity<ApiResponse<Void>> exportMyData() {
+        return ResponseEntity.ok(ApiResponse.success("Data exported"));
     }
 }

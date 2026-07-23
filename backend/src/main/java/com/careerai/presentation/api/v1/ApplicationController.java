@@ -19,55 +19,55 @@ public class ApplicationController {
 
     @PostMapping
     @Operation(summary = "Criar candidatura")
-    public ResponseEntity<ApiResponse<Object>> createApplication(@RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Application created", null));
+    public ResponseEntity<ApiResponse<Void>> createApplication(@RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Application created"));
     }
 
     @GetMapping
     @Operation(summary = "Listar todas candidaturas")
-    public ResponseEntity<ApiResponse<Object>> getApplications() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Applications listed", null));
+    public ResponseEntity<ApiResponse<Void>> getApplications() {
+        return ResponseEntity.ok(ApiResponse.success("Applications listed"));
     }
 
     @GetMapping("/kanban")
     @Operation(summary = "Agrupar por status para Kanban")
-    public ResponseEntity<ApiResponse<Object>> getApplicationsKanban() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Kanban data retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getApplicationsKanban() {
+        return ResponseEntity.ok(ApiResponse.success("Kanban data retrieved"));
     }
 
     @GetMapping("/{id}")
     @Operation(summary = "Buscar candidatura")
-    public ResponseEntity<ApiResponse<Object>> getApplication(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Application found", null));
+    public ResponseEntity<ApiResponse<Void>> getApplication(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Application found"));
     }
 
     @PatchMapping("/{id}/status")
     @Operation(summary = "Atualizar status da candidatura")
-    public ResponseEntity<ApiResponse<Object>> updateStatus(@PathVariable String id, @RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Status updated", null));
+    public ResponseEntity<ApiResponse<Void>> updateStatus(@PathVariable String id, @RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Status updated"));
     }
 
     @PutMapping("/{id}")
     @Operation(summary = "Atualizar candidatura completo")
-    public ResponseEntity<ApiResponse<Object>> updateApplication(@PathVariable String id, @RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Application updated", null));
+    public ResponseEntity<ApiResponse<Void>> updateApplication(@PathVariable String id, @RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Application updated"));
     }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Deletar candidatura")
-    public ResponseEntity<ApiResponse<Object>> deleteApplication(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Application deleted", null));
+    public ResponseEntity<ApiResponse<Void>> deleteApplication(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Application deleted"));
     }
 
     @PostMapping("/{id}/notes")
     @Operation(summary = "Adicionar nota à candidatura")
-    public ResponseEntity<ApiResponse<Object>> addNote(@PathVariable String id, @RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Note added", null));
+    public ResponseEntity<ApiResponse<Void>> addNote(@PathVariable String id, @RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Note added"));
     }
 
     @GetMapping("/{id}/timeline")
     @Operation(summary = "Timeline de etapas da candidatura")
-    public ResponseEntity<ApiResponse<Object>> getTimeline(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Timeline retrieved", null));
+    public ResponseEntity<ApiResponse<Void>> getTimeline(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Timeline retrieved"));
     }
 }

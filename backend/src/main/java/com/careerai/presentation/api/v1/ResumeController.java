@@ -20,39 +20,39 @@ public class ResumeController {
 
     @PostMapping("/upload")
     @Operation(summary = "Upload de currículo em PDF/DOCX")
-    public ResponseEntity<ApiResponse<Object>> uploadResume(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<ApiResponse<Void>> uploadResume(@RequestParam("file") MultipartFile file) {
         log.info("Uploading resume: {}", file.getOriginalFilename());
-        return ResponseEntity.ok(new ApiResponse<>(true, "Resume uploaded successfully", null));
+        return ResponseEntity.ok(ApiResponse.success("Resume uploaded successfully"));
     }
 
     @GetMapping
     @Operation(summary = "Listar currículos do usuário")
-    public ResponseEntity<ApiResponse<Object>> listResumes() {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Resumes listed", null));
+    public ResponseEntity<ApiResponse<Void>> listResumes() {
+        return ResponseEntity.ok(ApiResponse.success("Resumes listed"));
     }
 
     @GetMapping("/{id}")
     @Operation(summary = "Buscar currículo por ID")
-    public ResponseEntity<ApiResponse<Object>> getResume(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Resume found", null));
+    public ResponseEntity<ApiResponse<Void>> getResume(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Resume found"));
     }
 
     @PutMapping("/{id}")
     @Operation(summary = "Atualizar currículo")
-    public ResponseEntity<ApiResponse<Object>> updateResume(@PathVariable String id, @RequestBody Object request) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Resume updated", null));
+    public ResponseEntity<ApiResponse<Void>> updateResume(@PathVariable String id, @RequestBody Object request) {
+        return ResponseEntity.ok(ApiResponse.success("Resume updated"));
     }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Deletar currículo")
-    public ResponseEntity<ApiResponse<Object>> deleteResume(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Resume deleted", null));
+    public ResponseEntity<ApiResponse<Void>> deleteResume(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Resume deleted"));
     }
 
     @PostMapping("/{id}/analyze-ats")
     @Operation(summary = "Analisar currículo para ATS")
-    public ResponseEntity<ApiResponse<Object>> analyzeAts(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Resume analyzed", null));
+    public ResponseEntity<ApiResponse<Void>> analyzeAts(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Resume analyzed"));
     }
 
     @GetMapping("/{id}/download")
@@ -63,19 +63,19 @@ public class ResumeController {
 
     @GetMapping("/{id}/versions")
     @Operation(summary = "Histórico de versões do currículo")
-    public ResponseEntity<ApiResponse<Object>> getResumeVersions(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Resume versions listed", null));
+    public ResponseEntity<ApiResponse<Void>> getResumeVersions(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Resume versions listed"));
     }
 
     @PostMapping("/{id}/versions/{versionId}/restore")
     @Operation(summary = "Restaurar versão do currículo")
-    public ResponseEntity<ApiResponse<Object>> restoreResumeVersion(@PathVariable String id, @PathVariable String versionId) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Resume version restored", null));
+    public ResponseEntity<ApiResponse<Void>> restoreResumeVersion(@PathVariable String id, @PathVariable String versionId) {
+        return ResponseEntity.ok(ApiResponse.success("Resume version restored"));
     }
 
     @PostMapping("/{id}/export-linkedin")
     @Operation(summary = "Exportar currículo para o LinkedIn")
-    public ResponseEntity<ApiResponse<Object>> exportToLinkedIn(@PathVariable String id) {
-        return ResponseEntity.ok(new ApiResponse<>(true, "Resume exported to LinkedIn", null));
+    public ResponseEntity<ApiResponse<Void>> exportToLinkedIn(@PathVariable String id) {
+        return ResponseEntity.ok(ApiResponse.success("Resume exported to LinkedIn"));
     }
 }

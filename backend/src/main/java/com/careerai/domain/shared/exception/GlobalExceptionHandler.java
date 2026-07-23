@@ -42,11 +42,15 @@ public class GlobalExceptionHandler {
             return success(data, "Operação realizada com sucesso");
         }
 
-        public static ApiResponse<Void> error(String message, Map<String, String> errors) {
+        public static ApiResponse<Void> success(String message) {
+            return new ApiResponse<>(true, null, message, LocalDateTime.now(), null, UUID.randomUUID().toString());
+        }
+
+        public static <T> ApiResponse<T> error(String message, Map<String, String> errors) {
             return new ApiResponse<>(false, null, message, LocalDateTime.now(), errors, UUID.randomUUID().toString());
         }
 
-        public static ApiResponse<Void> error(String message) {
+        public static <T> ApiResponse<T> error(String message) {
             return error(message, null);
         }
     }
